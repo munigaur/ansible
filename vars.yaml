@@ -4,6 +4,10 @@
      URL: play.google.com
   vars_files:
     - demo-vars.yaml
+  vars_prompt:
+    - name: URL
+      prompt: Enter URL value
+      private: false
   tasks:
     - name: Printing URL
       ansible.builtin.debug:
