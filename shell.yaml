@@ -3,3 +3,9 @@
   tasks:
     - name: execute shell command
       ansible.builtin.shell: uptime
+      register: OUT_UPTIME
+
+    - name: Printing OUT_UPTIME variable
+      ansible.builtin.debug:
+        msg: "{{OUT_UPTIME}}"
+
