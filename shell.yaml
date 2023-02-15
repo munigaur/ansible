@@ -9,3 +9,11 @@
       ansible.builtin.debug:
         msg: "{{OUT_UPTIME.stdout}}"
 
+    - name: declaring the variable
+      ansible.builtin.set_fact: 
+        STATUS_CODE_VAR1: "{{OUT_UPTIME.rc}}"
+  
+      - name: Printing exit code 
+      ansible.builtin.debug:
+        msg: "{{STATUS_CODE_VAR1}}"
+
