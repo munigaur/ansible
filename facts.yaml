@@ -4,4 +4,7 @@
     - name: Printing OS of node
       ansible.builtin.debug:
         msg: OS Distribution = {{ansible_distribution}}
-        
+
+    - name: Printing mac address of node
+      ansible.builtin.debug:
+        msg: Mac address is {{ansible_default_ipv4.macaddress}}        
