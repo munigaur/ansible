@@ -1,0 +1,7 @@
+- name: demo on facts
+  hosts: all
+  tasks:
+    - name: Printing OS of node
+      ansible.builtin.debug:
+        msg: OS Distribution = {{ansible_distribution}}
+        
