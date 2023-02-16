@@ -1,0 +1,26 @@
+- name: Demo on using conditions
+  hosts: all
+  vars:
+     actions_var: false
+     test_var_defined: 1
+  
+    tasks:
+    - name: run this on centos machines only
+      ansible.builtin.debug:
+        msg: Hello from centos machine
+      when: ansible_distribution == "CentOS"
+
+    - name: run this on Ubuntu machines only
+      ansible.builtin.debug:
+        msg: Hello from ubuntu machine
+      when: ansible_distribution == "Ubuntu"
+
+    - name: run this action
+      ansible.builtin.debug:
+        msg: I will only run when actions_var is true
+      when: actions_var is true
+
+    - name: run this action when test_var_defined is defined with a value
+      ansible.builtin.debug:
+        msg: test variable is undefined
+      when: test_var_defined is undefined
