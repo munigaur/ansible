@@ -1,0 +1,32 @@
+- name: demo on tags
+  hosts: all
+  tasks:
+    - name: performing webserver installation
+      ansible.builtin.debug:
+        msg: performing webserver installation
+      tags: web
+
+    - name: webserver installation completed
+      ansible.builtin.debug:
+        msg: webserver installation completed
+      tags: web
+
+    - name: performing appserver installation
+      ansible.builtin.debug:
+        msg: performing appserver installation
+      tags: app
+
+    - name: appserver installation completed
+      ansible.builtin.debug:
+        msg: appserver installation completed
+      tags: app
+
+    - name: performing dbserver installation
+      ansible.builtin.debug:
+        msg: performing dbserver installation
+      tags: db
+
+    - name: dbserver installation completed
+      ansible.builtin.debug:
+        msg: dbserver installation completed
+      tags: db 
