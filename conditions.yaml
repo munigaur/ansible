@@ -1,7 +1,7 @@
 - name: Demo on using conditions
   hosts: all
   vars:
-     actions_var: false
+     actions_var: true
      test_var_defined: 1
   
   tasks:
@@ -22,5 +22,5 @@
 
     - name: run this action when test_var_defined is defined with a value
       ansible.builtin.debug:
-        msg: test variable is undefined
-      when: test_var_defined is undefined
+        msg: test variable is defined
+      when: test_var_defined is defined
