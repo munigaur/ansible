@@ -4,7 +4,7 @@
      actions_var: false
      test_var_defined: 1
   
-    tasks:
+  tasks:
     - name: run this on centos machines only
       ansible.builtin.debug:
         msg: Hello from centos machine
