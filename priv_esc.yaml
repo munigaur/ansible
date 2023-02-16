@@ -1,0 +1,13 @@
+- name: demo on privilege escalation
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: execute shell command
+      ansible.builtin.shell: id
+      register: OUT_id
+
+    - name: displaying outputL
+      ansible.builtin.debug:
+        msg: "{{OUT_id.stdout}}"
+
