@@ -3,3 +3,7 @@ frontend-pp.roboshop.internal
 
 [mongodb]
 mongodb-pp.roboshop.internal
+
+[catalogue]
+catalogue-pp.roboshop.internal
+
