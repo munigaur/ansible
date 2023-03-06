@@ -8,7 +8,7 @@
 
 - name: creating the application user account
   ansible.builtin.user:
-    name: {{APPUSER}}
+    name: "{{APPUSER}}"
     comment: roboshop service account
 
 - name: downloading and extracting the {{COMPONENT}}
