@@ -7,3 +7,6 @@ mongodb-pp.roboshop.internal
 [catalogue]
 catalogue-pp.roboshop.internal
 
+[redis]
+redis-pp.roboshop.internal
+
