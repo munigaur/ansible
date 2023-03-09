@@ -33,3 +33,17 @@
 - name: Install node ja package
   community.general.npm:
     path: /home/{{APPUSER}}/{{COMPONENT}}/
+
+- name: Copying systemd service file
+  ansible.builtin.template:
+    src: systemd.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
+    remote_src: yes
+
+- name: restarting service
+  ansible.builtin.systemd:
+    state: started
+    name: "{{COMPONENT}}"
+
+- name: set hostname
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
