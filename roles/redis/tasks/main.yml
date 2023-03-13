@@ -5,10 +5,10 @@
 
 - name: Install redis
   ansible.builtin.package:
-    name: redis-6.2.7
+    name: redis-6.2.11
     state: present
 
-- name: updating redis-6.2.7 config
+- name: updating redis-6.2.11 config
   ansible.builtin.replace:
     path: /etc/{{COMPONENT}}/{{COMPONENT}}.conf
     regexp: '127.0.0.1'
