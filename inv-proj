@@ -10,3 +10,6 @@ catalogue-pp.roboshop.internal
 [redis]
 redis-pp.roboshop.internal
 
+[user]
+user-pp.roboshop.internal
+
