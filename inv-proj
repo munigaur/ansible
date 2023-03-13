@@ -13,3 +13,6 @@ redis-pp.roboshop.internal
 [user]
 user-pp.roboshop.internal
 
+[cart]
+cart-pp.roboshop.internal
+
