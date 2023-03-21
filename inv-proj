@@ -16,3 +16,6 @@ user-pp.roboshop.internal
 [cart]
 cart-pp.roboshop.internal
 
+[mysql]
+mysql-pp.roboshop.internal
+
