@@ -19,3 +19,6 @@ cart-pp.roboshop.internal
 [mysql]
 mysql-pp.roboshop.internal
 
+[shipping]
+shipping-pp.roboshop.internal
+
