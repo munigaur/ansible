@@ -1,0 +1,29 @@
+- name: Install maven
+  ansible.builtin.yum:
+    name: 
+      - maven
+    state: present
+
+- name: creating the application user account
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: create-user
+
+- name: downloading and extracting the component
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download
+
+- name: preparing maven artifact
+  ansible.builtin.shell: mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
+  args:
+    chdir: /home/{{APPUSER}}/{{COMPONENT}}/
+  become_user: "{{APPUSER}}"
+
+- name: configuring service
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: configure-service
+
+- name: set hostname
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
