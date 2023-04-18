@@ -1,6 +1,6 @@
 # This playbook creates an instance, runs the playbook and then terminates the instance 
 - name: Creating EC2 for DryRun
-  hosts: 172.31.80.204
+  hosts: localhost
   gather_facts: False
   vars:
     instance_type: "t3.micro"
